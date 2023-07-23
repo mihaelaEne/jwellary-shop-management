@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class QualityController {
     List<Quality> qualityList;
 
+
     public QualityController( List<Quality> qualityList) {
         this.qualityList = qualityList;
     }
