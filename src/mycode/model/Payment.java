@@ -1,17 +1,20 @@
 package mycode.model;
 
 import java.time.LocalDate;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Payment {
     private  int payment_id;
     private int payment_customer_id;
-    private LocalDate payment_date;
+    private String payment_date;
     private int payment_amount;
     private String payment_description;
 
     public Payment(){}
-    public Payment(int payment_id, int payment_customer_id, LocalDate payment_date, int payment_amount, String payment_description) {
+
+
+    public Payment(int payment_id, int payment_customer_id, String payment_date, int payment_amount, String payment_description) {
         this.payment_id = payment_id;
         this.payment_customer_id = payment_customer_id;
         this.payment_date = payment_date;
@@ -23,7 +26,7 @@ public class Payment {
         String[] split = prop.split(",");
         this.payment_id=Integer.parseInt(split[0]);
         this.payment_customer_id=Integer.parseInt(split[1]);
-        this.payment_date= LocalDate.parse(split[2]);
+        this.payment_date= split[2];
         this.payment_amount=Integer.parseInt(split[3]);
         this.payment_description=split[4];
 
@@ -45,11 +48,11 @@ public class Payment {
         this.payment_customer_id = payment_customer_id;
     }
 
-    public LocalDate getPayment_date() {
+    public String getPayment_date() {
         return payment_date;
     }
 
-    public void setPayment_date(LocalDate payment_date) {
+    public void setPayment_date(String payment_date) {
         this.payment_date = payment_date;
     }
 
